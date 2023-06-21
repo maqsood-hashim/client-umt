@@ -19,10 +19,10 @@ const CourseCard = ({title,name,id,img}) => {
             
             <div className={Styles.course__content}>
                 <span>Jan-Jun 2021</span>
-                <h5>{name}</h5>
-                <h5>{title}</h5>
+                <h5>Airport Fundamentals </h5>
+                <h5></h5>
 
-                <span>This is a course template which is to be used as the course kit for the teachers.</span>
+                <span>Airport Fundamentals" is designed to provide a comprehensive overview and understanding of the essential aspects of airports and their operations.</span>
             </div>
             
         </div>
