@@ -114,8 +114,8 @@ const Dashboard = () => {
                     return (
                       <CourseCard
                         key={Math.random(2) * 10}
-                        title={val.courseDescription}
-                        name={val.courseName}
+                        title="Airport Fundamentals"
+                        name="Airport Fundamentals is designed to provide a comprehensive overview and understanding of the essential aspects of airports and their operations."
                         id={val._id}
                         img={val.courseThumbnail}
                       />
