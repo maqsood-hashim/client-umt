@@ -112,7 +112,7 @@ const TestInfo = () => {
   };
 
   const startOver = () => {
-    // window.location.href = '/course/647840e6c22ef933c087565a';
+    window.location.href = '/course/647840e6c22ef933c087565a';
   };
 
   return (
