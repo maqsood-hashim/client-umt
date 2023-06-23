@@ -178,7 +178,7 @@ const CourseInfo = () => {
   value={1}
 />
 <BottomNavigationAction
-  label={<span style={{ fontWeight: 'bold',fontSize: '1.5rem' }}>Expert</span>}
+  label={<span style={{ fontWeight: 'bold',fontSize: '1.2rem' }}>Expert</span>}
   icon={<WorkOutlineOutlined />}
   value={2}
 />
