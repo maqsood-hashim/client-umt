@@ -38,6 +38,26 @@ const Routing = () => {
   const dispatch = useDispatch();
   const user = JSON.parse(localStorage.getItem("user"));
   // console.log(user)
+   useEffect(() => {
+    // Disable text selection
+    document.body.style.userSelect = 'none';
+
+    // Disable copy-paste through keyboard shortcuts
+    const disableCopyPaste = (event) => {
+      if (event.ctrlKey || event.metaKey) {
+        event.preventDefault();
+      }
+    };
+
+    // Add event listeners to disable copy-paste
+    document.addEventListener('keydown', disableCopyPaste);
+
+    // Clean up the event listener on component unmount
+    return () => {
+      document.body.style.userSelect = 'auto';
+      document.removeEventListener('keydown', disableCopyPaste);
+    };
+  }, []);
   useEffect(() => {
     if (!user) {
       history.push("/login");
