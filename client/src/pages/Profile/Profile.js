@@ -12,7 +12,7 @@ import { useSelector } from "react-redux";
 import CommonHeader from "../../components/Common/CommonHeader";
 import Styles from "./Profile.module.css";
 import ToggleProfileInfo from "./ToggleProfileInfo/ToggleProfileInfo";
-import photo from "../../assets/images/adminProfile.jpg"
+
 import { useDispatch } from "react-redux";
 import base from "../TestInfo/BaseUrl";
  // Import default profile photo
