@@ -14,6 +14,7 @@ import Styles from "./Profile.module.css";
 import ToggleProfileInfo from "./ToggleProfileInfo/ToggleProfileInfo";
 import photo from "../../assets/images/adminProfile.jpg"
 import { useDispatch } from "react-redux";
+import base from "../TestInfo/BaseUrl";
  // Import default profile photo
 
 const Profile = () => {
@@ -113,7 +114,7 @@ const Profile = () => {
     formData.append("profilePicture", editedUser.profilePicture);
 
     axios
-      .put(`http://localhost:5000/auth/update-admin/64652a7b77f6da47caadb75e`, formData)
+      .put(`${base}/auth/update-admin/64652a7b77f6da47caadb75e`, formData)
       .then((response) => {
         console.log("Profile saved successfully");
         console.log(response.data.userData);
