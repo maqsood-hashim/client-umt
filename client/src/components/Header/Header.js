@@ -17,7 +17,8 @@ const Header = () => {
   const history = useHistory();
   const dispatch = useDispatch();
   const [toggle, setToggle] = useState(false);
-  const user = JSON.parse(localStorage.getItem("user"));
+   const { user } = useSelector((state) => state.auth);
+ 
   const toggleClose=()=>{
     setToggle(false)
     
