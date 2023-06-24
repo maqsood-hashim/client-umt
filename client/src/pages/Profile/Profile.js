@@ -27,7 +27,7 @@ const Profile = () => {
     email: "",
     password: "",
     confirmPassword: "",
-    profilePicture: photo,
+    profilePicture: user.profilePicture,
   });
   const [errors, setErrors] = useState({});
 
@@ -41,7 +41,7 @@ const Profile = () => {
       email: user.email,
       password: "",
       confirmPassword: "",
-      profilePicture: photo,
+      profilePicture: user.profilePicture,
     });
   }, [user]);
 
