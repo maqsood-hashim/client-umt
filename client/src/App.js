@@ -38,24 +38,46 @@ const Routing = () => {
   const dispatch = useDispatch();
   const user = JSON.parse(localStorage.getItem("user"));
   // console.log(user)
-   useEffect(() => {
+     useEffect(() => {
     // Disable text selection
     document.body.style.userSelect = 'none';
-
+  
     // Disable copy-paste through keyboard shortcuts
     const disableCopyPaste = (event) => {
       if (event.ctrlKey || event.metaKey) {
         event.preventDefault();
       }
     };
-
+  
+    // Disable copy-paste through context menu
+    const disableContextMenu = (event) => {
+      event.preventDefault();
+    };
+  
+    // Disable copy-paste through touch gestures
+    const disableTouchCopyPaste = (event) => {
+      event.preventDefault();
+    };
+  
     // Add event listeners to disable copy-paste
     document.addEventListener('keydown', disableCopyPaste);
-
-    // Clean up the event listener on component unmount
+    document.addEventListener('cut', disableCopyPaste);
+    document.addEventListener('copy', disableCopyPaste);
+    document.addEventListener('paste', disableCopyPaste);
+    document.addEventListener('contextmenu', disableContextMenu);
+    document.addEventListener('touchstart', disableTouchCopyPaste);
+    document.addEventListener('touchmove', disableTouchCopyPaste);
+  
+    // Clean up the event listeners on component unmount
     return () => {
       document.body.style.userSelect = 'auto';
       document.removeEventListener('keydown', disableCopyPaste);
+      document.removeEventListener('cut', disableCopyPaste);
+      document.removeEventListener('copy', disableCopyPaste);
+      document.removeEventListener('paste', disableCopyPaste);
+      document.removeEventListener('contextmenu', disableContextMenu);
+      document.removeEventListener('touchstart', disableTouchCopyPaste);
+      document.removeEventListener('touchmove', disableTouchCopyPaste);
     };
   }, []);
   useEffect(() => {
