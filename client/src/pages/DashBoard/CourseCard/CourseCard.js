@@ -18,7 +18,7 @@ const CourseCard = ({title,name,id,img}) => {
             
             
             <div className={Styles.course__content}>
-                <span>Jan-Jun 2021</span>
+                
                 <h5>Airport Fundamentals </h5>
                 <h5></h5>
 
